@@ -14,8 +14,8 @@ ptr = NULL;
 copy_env(&ptr, envp);
 while (i == 1)
 {
-printf("%s", _getenv(&ptr, "PWD"));
-printf("$");
+print(_getenv(&ptr, "PWD"));
+print("$");
 fflush(stdout);
 ex(&ptr);
 }
