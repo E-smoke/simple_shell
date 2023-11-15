@@ -65,7 +65,13 @@ i = 0;
 len = -1;
 while (pathptr[i] != NULL)
 {
-path = _strcat(pathptr[i], cmd);
+if (args[0][0] == '/')
+{
+path = (char *)malloc(sizeof(char) * (_strlen(args[0] + 1)));
+_strcpy(path, (_strlen(args[0]) + 1), args[0]); }
+else
+{
+path = _strcat(pathptr[i], cmd); }
 if (access(path, F_OK) == 0)
 {
 len = fork();
