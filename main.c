@@ -13,6 +13,7 @@ env *ptr;
 (void)argc;
 (void)argv;
 i = 1;
+signal(SIGINT, handler);
 ptr = NULL;
 copy_env(&ptr, envp);
 while (i == 1)

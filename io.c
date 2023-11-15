@@ -17,6 +17,11 @@ if (*bufptr == NULL)
 return (NULL);
 }
 *n = read(fd, *bufptr, 1023);
+if (*n == 0)
+{
+print("\n");
+exit(1);
+}
 (*bufptr)[*n - 1] = '\0';
 return (*bufptr);
 }

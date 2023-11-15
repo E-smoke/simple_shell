@@ -59,4 +59,5 @@ void frell(env **head);
 void _setenva(env **ptr, char **args);
 void _setenv(env **ptr, char *args1, char *args2);
 void _unsetenv(env **ptr, char **args);
+void handler(int sig_num);
 #endif
