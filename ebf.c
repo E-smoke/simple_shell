@@ -67,7 +67,7 @@ while (pathptr[i] != NULL)
 {
 if (args[0][0] == '/')
 {
-path = (char *)malloc(sizeof(char) * (_strlen(args[0] + 1)));
+path = (char *)malloc(sizeof(char) * (_strlen(args[0]) + 1));
 _strcpy(path, (_strlen(args[0]) + 1), args[0]); }
 else
 {
