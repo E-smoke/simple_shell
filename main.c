@@ -18,7 +18,7 @@ ptr = NULL;
 copy_env(&ptr, envp);
 while (i == 1)
 {
-ex(&ptr);
+ex(&ptr, envp);
 }
 return (0);
 }

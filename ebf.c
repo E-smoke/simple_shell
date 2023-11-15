@@ -51,7 +51,7 @@ return (pathptr);
  * @args: arguments
  * Return: 0 on sucess and -1 on error
  */
-int exec(env **ptr, char **args)
+int exec(env **ptr, char **args, char **pp)
 {
 int i;
 int len;
@@ -77,7 +77,7 @@ if (access(path, F_OK) == 0)
 len = fork();
 if (len == 0)
 {
-execve(path, args, NULL);
+execve(path, args, pp);
 }
 else
 {
