@@ -14,7 +14,6 @@ ptr = NULL;
 copy_env(&ptr, envp);
 while (i == 1)
 {
-print(_getenv(&ptr, "PWD"));
 print("$");
 fflush(stdout);
 ex(&ptr);
