@@ -18,8 +18,6 @@ ptr = NULL;
 copy_env(&ptr, envp);
 while (i == 1)
 {
-print("$ ");
-fflush(stdout);
 ex(&ptr);
 }
 return (0);
