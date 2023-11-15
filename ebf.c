@@ -3,12 +3,12 @@
  * getcmds - gets cmd
  * Return: series of cmds separated by ;
  */
-char **getcmds()
+char **getcmds(env **ptr)
 {
 int n;
 char **cmds;
 char *input = NULL;
-_getline(&input, &n, 0);
+_getline(ptr, &input, &n, 0);
 cmds = init_args(input, ";");
 free(input);
 return (cmds);

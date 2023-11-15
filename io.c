@@ -6,7 +6,7 @@
  * @fd: the file descriptor
  * Return: the string
  */
-char *_getline(char **bufptr, int *n, int fd)
+char *_getline(env **ptr,char **bufptr, int *n, int fd)
 {
 if (*bufptr == NULL)
 {
@@ -19,7 +19,9 @@ return (NULL);
 *n = read(fd, *bufptr, 1023);
 if (*n == 0)
 {
-exit(0);
+frell(ptr);
+free(*bufptr);
+exit(1);
 }
 (*bufptr)[*n - 1] = '\0';
 return (*bufptr);

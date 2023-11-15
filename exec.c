@@ -9,7 +9,7 @@ int i;
 char *cmd;
 char **args;
 char **cmds;
-cmds = getcmds();
+cmds = getcmds(ptr);
 if (cmds == NULL)
 {
 return; }
