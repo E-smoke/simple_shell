@@ -21,7 +21,7 @@ if (*n == 0)
 {
 frell(ptr);
 free(*bufptr);
-exit(1);
+exit(0);
 }
 (*bufptr)[*n - 1] = '\0';
 return (*bufptr);
