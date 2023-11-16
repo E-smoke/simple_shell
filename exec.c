@@ -47,13 +47,19 @@ else if (exec(ptr, args, pp) != -1)
 {
 free(cmd);
 _free(args); }
-else if (_strcmp("exit", args[0]) == 0)
+else if (_strcmp("exit", args[0]) == 0 && strint(args[1]) == 0)
 {
 frell(ptr);
 free(cmd);
 _free(cmds);
 _free(te);
 my_exit(args); }
+else if (_strcmp("exit", args[0]) == 0 && strint(args[1]) == -1)
+{
+free(cmd);
+my_exit(args);
+_free(args);
+}
 else
 {
 exec_built_ins(ptr, args);

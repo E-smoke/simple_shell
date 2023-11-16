@@ -17,7 +17,9 @@ exit(0);
 }
 else if (strint(args[1]) == -1)
 {
-return;
+print("./hsh: 1: exit: Illegal number: ");
+print(args[1]);
+print("\n");
 }
 else
 {
