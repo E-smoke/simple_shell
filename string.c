@@ -89,13 +89,12 @@ return (str);
  */
 char *_strtok(char *str, const char *delim)
 {
-int i;
 static char *token;
 static char *start;
+int i = 0;
 if (str != NULL)
 {
 token = str;
-i = 0;
 while (!((token[i] == delim[0]) || (token[i] == '\0')))
 {
 i++; }

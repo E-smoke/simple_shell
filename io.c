@@ -1,12 +1,13 @@
 #include "main.h"
 /**
  * _getline - mimics getline
+ * @ptr: ptr
  * @bufptr: ptr to buffer
  * @n: where to store size of string
  * @fd: the file descriptor
  * Return: the string
  */
-char *_getline(env **ptr,char **bufptr, int *n, int fd)
+char *_getline(env **ptr, char **bufptr, int *n, int fd)
 {
 int i;
 if (*bufptr == NULL)

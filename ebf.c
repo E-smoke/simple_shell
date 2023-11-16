@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * getcmds - gets cmd
+ * @ptr: env var
  * Return: series of cmds separated by ;
  */
 char **getcmds(env **ptr)
@@ -49,13 +50,12 @@ return (pathptr);
  * exec - executes already existing cmds
  * @ptr: env vars
  * @args: arguments
+ * @pp: ptr
  * Return: 0 on sucess and -1 on error
  */
 int exec(env **ptr, char **args, char **pp)
 {
-int i;
-int len;
-int stat;
+int i, len, stat;
 char **pathptr;
 char *path;
 char *cmd = NULL;
@@ -77,23 +77,17 @@ if (access(path, F_OK) == 0)
 len = fork();
 if (len == 0)
 {
-execve(path, args, pp);
-}
+execve(path, args, pp); }
 else
 {
 wait(&stat);
-break;
-}
-}
+break; }}
 free(path);
-++i;
-}
+++i; }
 if (pathptr[i] != NULL)
 {
-free(path);
-}
+free(path); }
 free(cmd);
 _free(pathptr);
-return (len);
-}
+return (len); }
 

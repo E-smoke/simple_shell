@@ -2,6 +2,7 @@
 /**
  * ex - executes both buit ins and executable files
  * @ptr: env var
+ * @pp: ptr
  */
 void ex(env **ptr, char **pp)
 {
