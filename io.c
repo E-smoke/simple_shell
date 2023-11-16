@@ -24,6 +24,14 @@ free(*bufptr);
 exit(0);
 }
 (*bufptr)[*n - 1] = '\0';
+while ((*bufptr)[*n] != '\0')
+{
+if ((*bufptr)[*n] == '#')
+{
+(*bufptr)[*n] = '\0';
+break;
+}
+}
 return (*bufptr);
 }
 /**
