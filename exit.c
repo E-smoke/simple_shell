@@ -20,6 +20,7 @@ else if (strint(args[1]) == -1)
 print("./hsh: 1: exit: Illegal number: ");
 print(args[1]);
 print("\n");
+_free(args);
 }
 else
 {
