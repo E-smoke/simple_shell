@@ -7,10 +7,8 @@
 void ex(env **ptr, char **pp)
 {
 int i;
-char *cmd;
-char **args;
-char **cmds;
-char *var;
+char *cmd, var;
+char **args, cmds;
 cmds = getcmds(ptr);
 if (cmds == NULL)
 {
@@ -27,8 +25,7 @@ print(var);
 print("\n");
 free(var);
 free(cmd);
-_free(args);
-}
+_free(args); }
 else if (_strcmp("env", args[0]) == 0)
 {
 print_env(ptr);

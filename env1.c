@@ -87,7 +87,7 @@ current = current->ptr;
 }
 /**
  * addbeg - adds linkd list to beginning
- * @ptr: ptr
+ * @head: ptr
  * @var: var
  * @value: value
  */

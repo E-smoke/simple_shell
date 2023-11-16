@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * add - adds a new node to the linked list
+ * addend - adds a new node to the linked list
  * @ptr: env var
  * @var: var
  * @value: value
