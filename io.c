@@ -39,6 +39,7 @@ break;
 if ((*bufptr)[i - 1] == ';')
 {
 (*bufptr)[i - 2] = '\0'; }
+DO(bufptr);
 return (*bufptr);
 }
 /**

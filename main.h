@@ -62,4 +62,6 @@ void _unsetenv(env **ptr, char **args);
 void handler(int sig_num);
 char* my_itoa(int num);
 void addbeg(env **head, char *var, char *value);
+void DO(char **bufptr);
+void UNDO(char *bufptr);
 #endif

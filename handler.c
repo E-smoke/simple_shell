@@ -47,3 +47,49 @@ if (isNegative)
 str[0] = '-'; }
 str[digits] = '\0';
 return (str); }
+/**
+ * DO - replaces spaces inside "" with !
+ * @bufptr: ptr
+ */
+void DO(char **bufptr)
+{
+int i;
+int j;
+i = 0;
+while ((*bufptr)[i] != '\0')
+{
+if ((*bufptr)[i] == '\"')
+{
+j = i + 1;
+while ((*bufptr)[j] != '\"')
+{
+if ((*bufptr)[j] == ' ')
+{
+(*bufptr)[j] = '!'; }
+++j; }
+i = j + 1;
+break; }
+++i; }}
+/**
+ * UNDO - replaces spaces inside "" with !
+ * @bufptr: ptr
+ */
+void UNDO(char *bufptr)
+{
+int i;
+int j;
+i = 0;
+while ((bufptr)[i] != '\0')
+{
+if ((bufptr)[i] == '\"')
+{
+j = i + 1;
+while ((bufptr)[j] != '\"')
+{
+if ((bufptr)[j] == '!')
+{
+(bufptr)[j] = ' '; }
+++j; }
+i = j + 1;
+break; }
+++i; }}
