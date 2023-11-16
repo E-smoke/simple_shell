@@ -10,6 +10,7 @@ int i;
 char *cmd;
 char **args;
 char **cmds;
+char *var;
 cmds = getcmds(ptr);
 if (cmds == NULL)
 {
@@ -19,7 +20,16 @@ while (cmds[i] != NULL)
 {
 cmd = filter(cmds[i]);
 args = getargs(cmd);
-if (_strcmp("env", args[0]) == 0)
+if (_strcmp("$$", args[0]) == 0)
+{
+var = my_itoa(getpid());
+print(var);
+print("\n");
+free(var);
+free(cmd);
+_free(args);
+}
+else if (_strcmp("env", args[0]) == 0)
 {
 print_env(ptr);
 free(cmd);
