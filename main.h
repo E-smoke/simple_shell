@@ -51,7 +51,7 @@ int _strcmp(char *str1, char *str2);
 char **getcmds(env **ptr);
 int fillen(char *str);
 char *filter(char *str);
-void add(env **ptr, char *var, char *value);
+void addend(env **ptr, char *var, char *value);
 void copy_env(env **ptr, char **en);
 char *_getenv(env **ptr, char *var);
 void print_env(env **ptr);
@@ -61,4 +61,5 @@ void _setenv(env **ptr, char *args1, char *args2);
 void _unsetenv(env **ptr, char **args);
 void handler(int sig_num);
 char* my_itoa(int num);
+void addbeg(env **head, char *var, char *value);
 #endif

@@ -36,7 +36,7 @@ return;
 }
 current = current->ptr;
 }
-add(ptr, args[1], args[2]);
+addbeg(ptr, args[1], args[2]);
 }
 /**
  * _setenv - implements setenv
@@ -59,7 +59,7 @@ return;
 }
 current = current->ptr;
 }
-add(ptr, args1, args2);
+addbeg(ptr, args1, args2);
 }
 /**
  * _unsetenv - implements unsetenv for args
@@ -83,5 +83,38 @@ return;
 }
 csp = current;
 current = current->ptr;
+}
+}
+/**
+ * addbeg - adds linkd list to beginning
+ * @ptr: ptr
+ * @var: var
+ * @value: value
+ */
+void addbeg(env **head, char *var, char *value)
+{
+int lenvar;
+int lenval;
+env *assist;
+lenvar = _strlen(var);
+lenval = _strlen(value);
+if (*head == NULL)
+{
+*head = (env *)malloc(sizeof(env));
+(*head)->var = (char *)malloc(sizeof(char) * (lenvar + 1));
+(*head)->value = (char *)malloc(sizeof(char) * (lenval + 1));
+(*head)->ptr = NULL;
+_strcpy(((*head)->var), (lenvar + 1), var);
+_strcpy(((*head)->value), (lenval + 1), value);
+}
+else
+{
+assist = (env *)malloc(sizeof(env));
+(assist)->var = (char *)malloc(sizeof(char) * (lenvar + 1));
+(assist)->value = (char *)malloc(sizeof(char) * (lenval + 1));
+_strcpy((assist->var), (lenvar + 1), var);
+_strcpy((assist->value), (lenval + 1), value);
+assist->ptr = *head;
+*head = assist;
 }
 }

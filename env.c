@@ -5,7 +5,7 @@
  * @var: var
  * @value: value
  */
-void add(env **ptr, char *var, char *value)
+void addend(env **ptr, char *var, char *value)
 {
 int lenvar;
 int lenval;
@@ -58,7 +58,7 @@ while (en[i] != NULL)
 temp = (char *)malloc(sizeof(char) * (_strlen(en[i]) + 1));
 _strcpy(temp, (_strlen(en[i]) + 1), en[i]);
 ena = init_args(temp, "=");
-add(ptr, ena[0], ena[1]);
+addbeg(ptr, ena[0], ena[1]);
 free(temp);
 _free(ena);
 ++i;
@@ -102,13 +102,13 @@ current = *ptr;
 while (current->ptr != NULL)
 {
 write(1, current->var, strlen(current->var));
-write(1, " = ", 3);
+write(1, "=", 1);
 write(1, current->value, strlen(current->value));
 write(1, "\n", 1);
 current = current->ptr;
 }
 write(1, current->var, strlen(current->var));
-write(1, " = ", 3);
+write(1, "=", 1);
 write(1, current->value, strlen(current->value));
 write(1, "\n", 1);
 }
