@@ -7,8 +7,8 @@
 void ex(env **ptr, char **pp)
 {
 int i;
-char *cmd, var;
-char **args, cmds;
+char *cmd, *var;
+char **args, **cmds;
 cmds = getcmds(ptr);
 if (cmds == NULL)
 {
@@ -39,7 +39,7 @@ else if (_strcmp("exit", args[0]) == 0)
 {
 frell(ptr);
 free(cmd);
-_free(cmds);
+free(cmds);
 my_exit(args); }
 else
 {
