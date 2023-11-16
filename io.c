@@ -8,6 +8,7 @@
  */
 char *_getline(env **ptr,char **bufptr, int *n, int fd)
 {
+int i;
 if (*bufptr == NULL)
 {
 *bufptr = (char *)malloc(1024 * sizeof(char));
@@ -24,13 +25,15 @@ free(*bufptr);
 exit(0);
 }
 (*bufptr)[*n - 1] = '\0';
-while ((*bufptr)[*n] != '\0')
+i = 0;
+while ((*bufptr)[i] != '\0')
 {
-if ((*bufptr)[*n] == '#')
+if ((*bufptr)[i] == '#')
 {
-(*bufptr)[*n] = '\0';
+(*bufptr)[i] = '\0';
 break;
 }
+++i;
 }
 return (*bufptr);
 }
