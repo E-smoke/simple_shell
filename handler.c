@@ -66,9 +66,8 @@ while ((*bufptr)[j] != '\"')
 if ((*bufptr)[j] == ' ')
 {
 (*bufptr)[j] = '!'; }
-++j; }
 i = j + 1;
-break; }
+break; }}
 ++i; }}
 /**
  * UNDO - replaces spaces inside "" with !
