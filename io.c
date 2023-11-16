@@ -36,6 +36,9 @@ break;
 }
 ++i;
 }
+if ((*bufptr)[i - 1] == ';')
+{
+(*bufptr)[i - 2] = '\0'; }
 return (*bufptr);
 }
 /**
