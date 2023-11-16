@@ -58,7 +58,7 @@ while (en[i] != NULL)
 temp = (char *)malloc(sizeof(char) * (_strlen(en[i]) + 1));
 _strcpy(temp, (_strlen(en[i]) + 1), en[i]);
 ena = init_args(temp, "=");
-addbeg(ptr, ena[0], ena[1]);
+addend(ptr, ena[0], ena[1]);
 free(temp);
 _free(ena);
 ++i;
