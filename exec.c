@@ -39,7 +39,7 @@ else if (_strcmp("exit", args[0]) == 0)
 {
 frell(ptr);
 free(cmd);
-free(cmds);
+_free(cmds);
 my_exit(args); }
 else
 {

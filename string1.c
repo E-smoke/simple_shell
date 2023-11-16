@@ -35,7 +35,7 @@ return (NULL);
 }
 for (i = 0; i < c; ++i)
 {
-arg[i] = malloc(sizeof(char) * (_strlen(token) + 1));
+arg[i] =(char *) malloc(sizeof(char) * (_strlen(token) + 1));
 _strcpy(arg[i], (_strlen(token) + 1), token);
 token = _strtok(NULL, delim);
 }
