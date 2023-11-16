@@ -47,7 +47,7 @@ else if (exec(ptr, args, pp) != -1)
 {
 free(cmd);
 _free(args); }
-else if (_strcmp("exit", args[0]) == 0 && strint(args[1]) == 0)
+else if (_strcmp("exit", args[0]) == 0 && (args[1] == NULL || strint(args[1]) == 0))
 {
 frell(ptr);
 free(cmd);
