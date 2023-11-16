@@ -20,7 +20,7 @@ while (cmds[i] != NULL)
 {
 cmd = filter(cmds[i]);
 args = getargs(cmd);
-if (_strcmp("echo", args[0]) == 0)
+if (_strcmp("echo", args[0]) == 0 && _strcmp("$$", args[1]) == 0)
 {
 var = my_itoa(getpid());
 print(var);
